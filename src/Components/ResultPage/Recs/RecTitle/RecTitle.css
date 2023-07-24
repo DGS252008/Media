@@ -1,0 +1,22 @@
+#rec, #recTitle {
+    background-image: linear-gradient(
+      to right,
+      #000,
+      #380015,
+      #54001f,
+      #380015,
+      #000
+    );
+    color: azure;
+    width: 50%;
+}
+
+#recTitleContainer {
+    padding: 2rem;
+}
+
+#recTitle {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}

@@ -1,0 +1,34 @@
+#MediaResults {
+  width: 90%;
+}
+
+#grid {
+  background-image: linear-gradient(
+      #000,
+      #54001f,
+      #000
+    );
+    color: azure;
+    width: 80%;
+}
+
+#info {
+  width: 7%;
+}
+
+.img-fluid {
+  width: 15rem;
+}
+
+#mediaGrid {
+  display: flex;
+}
+#mediaInfo {
+  width: 70%;
+}
+
+#lineBreak {
+  margin-top: -1rem;
+}
+
+

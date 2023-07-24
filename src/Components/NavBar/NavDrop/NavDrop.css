@@ -1,0 +1,8 @@
+.dropdown-item:hover {
+    background-image: linear-gradient(
+      to right,
+      #54001f,
+      #380015,
+      #000
+    );
+}

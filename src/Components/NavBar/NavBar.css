@@ -1,0 +1,13 @@
+#NavBar {
+    height: 3.2rem;
+}
+
+#homeBtn {
+    display: inline;
+    color: #f0ffff;
+}
+
+#homeBtn:active {
+    color: #54001f;
+    border-color: #54001f;
+}
