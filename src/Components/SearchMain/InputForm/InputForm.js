@@ -28,18 +28,18 @@ const InputForm = ({ moviesByTitle, setMoviesByTitle, search, setSearch }) => {
     }
 
     return (
-        <form className="Form" onSubmit={handleSubmit}>
-            <span>
+        <form className="form-inline mx-auto" onSubmit={handleSubmit}>
+            <span className='form-group mx-auto'>
                 <input
-                    className='Input'
+                    className='form-control'
                     name='search-field'
                     id='search-field'
-                    placeholder='Search'
+                    placeholder='Search titles'
                     type='search'
                     value={movieTitle}
                     onChange={(e) => { setMovieTitle(e.target.value) }}
                 />
-                <button className='submit'>Enter</button>
+                <button id='submitBtn' type='submit' className='btn m-1 text-white'>Enter</button>
             </span>
         </form>
     )

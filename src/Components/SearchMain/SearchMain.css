@@ -2,7 +2,7 @@
   height: 70vh;
   overflow: hidden;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(84, 0, 31, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(84, 0, 31, 0.4)),
     url("https://assets.nflxext.com/ffe/siteui/vlv3/ce221d7a-8901-41d9-b726-3ea2efe3a650/0b3dc3ab-67fa-49bd-9d78-c6557c01e5b4/US-en-20230703-popsignuptwoweeks-perspective_alpha_website_small.jpg");
   position: relative;
 }

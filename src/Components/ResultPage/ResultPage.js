@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MediaResults from './SearchedCard/SearchedCard';
-import Recs from './Recs/Recs';
+import RecTitle from './Recs/RecTitle/RecTitle';
 import NavBar from '../NavBar/NavBar';
 import SearchedCard from './SearchedCard/SearchedCard';
 
@@ -16,7 +16,7 @@ const ResultPage = ({ moviesByTitle, search }) => {
                     return (
                         <>
                             <SearchedCard key={movie.title} movie={movie} />
-                            <Recs />
+                            <RecTitle />
                         </>
                     )
                 })

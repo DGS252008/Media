@@ -1,0 +1,13 @@
+#topCard {
+  width: 10rem;
+  color: #f0ffff;
+}
+
+#topCard:hover {
+  scale: (1.1);
+}
+
+
+#textContainer {
+    display: inline;
+}

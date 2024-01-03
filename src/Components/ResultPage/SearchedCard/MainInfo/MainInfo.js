@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './MainInfo.css';
-
 const MainInfo = ({movie}) => {
   return (
       <div id='mediaInfo' className="row">
