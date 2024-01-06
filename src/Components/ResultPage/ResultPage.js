@@ -5,9 +5,11 @@ import axios from 'axios';
 
 import SearchedCard from './SearchedCard/SearchedCard';
 import RecTitle from './Recs/RecTitle/RecTitle';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 const ResultPage = () => {
+    const { cardId } = useParams();
+
     const location = useLocation();
     const { movie } = location.state || {};
 

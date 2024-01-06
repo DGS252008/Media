@@ -5,7 +5,7 @@ const IntResCard = ({ movie }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/result-page', { state: { movie } });
+    navigate(`/results/${movie._id}`, { state: { movie } });
   };
 
   return (

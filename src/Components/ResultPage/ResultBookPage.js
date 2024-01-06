@@ -2,9 +2,11 @@
 import React from 'react';
 import SearchedBookCard from './SearchedCard/SearchedBookCard';
 import RecTitle from './Recs/RecTitle/RecTitle';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 const ResultPage = () => {
+    const { cardId } = useParams();
+
     const location = useLocation();
     const { book } = location.state || {};
 

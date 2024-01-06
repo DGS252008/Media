@@ -5,7 +5,7 @@ const IntResCardBook = ({ book }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/result-book-page', { state: { book } });
+        navigate(`/results/${book._id}`, { state: { book } });
     };
 
     return (

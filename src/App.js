@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Router, Routes, Route, Link } from 'react-router-dom';
+// Make sure you import the Switch component correctly
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 import './App.css';
 import Home from './Components/Home';
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <>
-    <NavBar />
+      <NavBar />
       <Routes>
         <Route
           path='/'
@@ -37,7 +39,7 @@ function App() {
           path='/search-results'
           element={
             <>
-              <IntAllRes results={mediaByTitle}/>
+              <IntAllRes results={mediaByTitle} />
             </>
           }
         />
@@ -66,11 +68,11 @@ function App() {
           }
         />
         <Route
-          path='/result-page'
+          path="/results/:result_id"
           element={<ResultPage />}
         />
         <Route
-          path='/result-book-page'
+          path='/results/:result_id'
           element={<ResultBookPage />}
         />
       </Routes>
