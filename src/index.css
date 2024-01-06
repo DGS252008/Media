@@ -2,7 +2,7 @@
   padding-right: 2px;
   padding-left: 2px;
   text-decoration: none!important;
-  color: #f0ffff;
+  color: #fff;
 }
 
 body {
@@ -17,8 +17,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.card {
-  border-radius: 5px;
 }

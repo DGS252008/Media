@@ -1,28 +1,30 @@
-import React from 'react';
+// ResultPage.js
+import React, { useEffect } from 'react';  // Correct import statement: React should be imported first
 
-import MediaResults from './SearchedCard/SearchedCard';
-import RecTitle from './Recs/RecTitle/RecTitle';
-import NavBar from '../NavBar/NavBar';
+import axios from 'axios';
+
 import SearchedCard from './SearchedCard/SearchedCard';
+import RecTitle from './Recs/RecTitle/RecTitle';
+import { useLocation } from 'react-router-dom';
 
-const ResultPage = ({ moviesByTitle, search }) => {
+const ResultPage = () => {
+    const location = useLocation();
+    const { movie } = location.state || {};
+
+    console.log(movie);
+
+    const { img, title, released, rating, description, duration } = movie || {};
+
     return (
         <div className='container mx-auto'>
-            {moviesByTitle.length === 0 && search && <p className='text-red-500'>Sorry, no such movie found. :( </p>}
-            {console.log(moviesByTitle)}
-            {moviesByTitle.length > 0 &&
-                moviesByTitle.map((movie) => {
-                    console.log(movie);
-                    return (
-                        <>
-                            <SearchedCard key={movie.title} movie={movie} />
-                            <RecTitle />
-                        </>
-                    )
-                })
-            }
+            {title && (
+                <React.Fragment key={title}>
+                    <SearchedCard movie={{ img, title, released, rating, description, duration }} />
+                    <RecTitle movie={movie} />
+                </React.Fragment>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default ResultPage;

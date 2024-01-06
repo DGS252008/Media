@@ -1,12 +1,12 @@
 import React from 'react';
 import { format, isValid, parseISO } from 'date-fns';
 
-const MainInfo = ({ movie }) => {
+const MainInfo = ({ book }) => {
     // Parse the string to a Date object
-    const releaseDateObject = parseISO(movie.released);
+    const releaseDateObject = parseISO(book.published);
 
     if (!(releaseDateObject instanceof Date) || !isValid(releaseDateObject)) {
-        console.warn(`Invalid or missing date: ${movie.released}`);
+        console.warn(`Invalid or missing date: ${book.published}`);
     }
 
     const releaseDate = releaseDateObject instanceof Date && isValid(releaseDateObject)
@@ -21,10 +21,10 @@ const MainInfo = ({ movie }) => {
                         Title:
                     </dt>
                     <dd className='list-inline-item'>
-                        {movie.title}
+                        {book.title}
                     </dd>
                     <dt id='info' className='list-inline-item'>
-                        Release:
+                        Published:
                     </dt>
                     <dd>
                         {releaseDate}
@@ -38,13 +38,13 @@ const MainInfo = ({ movie }) => {
                         Rating:
                     </dt>
                     <dd>
-                        {movie.rating}
+                        {book.rating}
                     </dd>
                     <dt id='info' className='list-inline-item'>
-                        Runtime:
+                        Author:
                     </dt>
                     <dd>
-                        {movie.duration}
+                        {book.author}
                     </dd>
                 </dl>
             </div>

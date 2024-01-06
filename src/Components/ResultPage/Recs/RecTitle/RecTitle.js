@@ -1,8 +1,29 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
+import axios from 'axios';
+
+import IntRes from '../../../IntermediateResult/IntRes';
+import IntResShows from '../../../IntermediateResult/IntResShows';
+import IntResBooks from '../../../IntermediateResult/IntResBooks'
 
 import './RecTitle.css';
 
-const RecTitle = () => {
+const RecTitle = ({ movie }) => {
+    const [recs, setRecs] = useState([]);
+    console.log(movie.genres);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const show = {"genres": movie.genres, "limit": 4};
+            const res = await axios.get("http://localhost:5010/recommendation", {
+                params: show
+            });
+            setRecs(res.data);
+            console.log(recs);
+        }
+
+        fetchData();
+    }, []);
+
     return (
         <div className="container mx-auto">
             <div id='rec' className='card bg-black mx-auto p-2'>
@@ -11,12 +32,16 @@ const RecTitle = () => {
             <div id='recTitleContainer' className="mx-auto">
                 <div id='recTitle' className="bg-black mx-auto">
                     <h3 className='font-weight-light text-white'>Movies</h3>
+                    <IntRes results={recs} />
+
                 </div>
                 <div id='recTitle' className="bg-black mx-auto">
                     <h3 className='font-weight-light text-white'>Shows</h3>
+                    <IntResShows results={recs} />
                 </div>
                 <div id='recTitle' className="bg-black mx-auto">
                     <h3 className='font-weight-light text-white'>Books</h3>
+                    <IntResBooks results={recs} />
                 </div>
             </div>
         </div>

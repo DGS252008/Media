@@ -3,14 +3,14 @@ import React from 'react';
 import SearchMain from './SearchMain/SearchMain';
 import TopMedia from './TopMedia/TopMedia';
 
-const Home = ({moviesByTitle, setMoviesByTitle, search, setSearch}) => {
+const Home = ({ mediaByTitle, setMediaByTitle, search, setSearch}) => {
     return (
         <div>
             <>
                 <SearchMain
-                    moviesByTitle={moviesByTitle}
+                    mediaByTitle={mediaByTitle}
                     search={search}
-                    setMoviesByTitle={setMoviesByTitle}
+                    setMediaByTitle={setMediaByTitle}
                     setSearch={setSearch}
                 />
                 <TopMedia />

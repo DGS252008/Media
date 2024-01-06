@@ -4,7 +4,7 @@ import "./SearchMain.css";
 
 import InputForm from "./InputForm/InputForm";
 
-const SearchMain = ({ moviesByTitle, setMoviesByTitle, search, setSearch }) => {
+const SearchMain = ({ mediaByTitle, setMediaByTitle, search, setSearch }) => {
     return (
         <div id="bg">
             <div id="desContainer" className="mx-auto">
@@ -15,9 +15,9 @@ const SearchMain = ({ moviesByTitle, setMoviesByTitle, search, setSearch }) => {
                     </h1>
                 </div>
                 <InputForm
-                    moviesByTitle={moviesByTitle}
+                    mediaByTitle={mediaByTitle}
                     search={search}
-                    setMoviesByTitle={setMoviesByTitle}
+                    setMediaByTitle={setMediaByTitle}
                     setSearch={setSearch}
                 />
             </div>

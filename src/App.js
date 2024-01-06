@@ -1,56 +1,77 @@
 import React, { useState } from 'react';
-import { Router, Routes, Route } from 'react-router-dom';
+import { Router, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import Home from './Components/Home';
+import IntAllRes from './Components/IntermediateResult/IntAllRes';
+import IntResCard from './Components/IntermediateResult/IntResCard';
 import ResultPage from './Components/ResultPage/ResultPage';
+import ResultBookPage from './Components/ResultPage/ResultBookPage';
 import NavBar from './Components/NavBar/NavBar';
-import AllBooks from './Components/AllPages/AllBooks/AllBooks';
-import AllMovies from './Components/AllPages/AllMovies/AllMovies';
-import AllShows from './Components/AllPages/AllShows/AllShows';
+import AllBooks from './Components/AllPages/AllBooks';
+import AllMovies from './Components/AllPages/AllMovies';
+import AllShows from './Components/AllPages/AllShows';
 
 function App() {
-  const [moviesByTitle, setMoviesByTitle] = useState([]);
+  const [mediaByTitle, setMediaByTitle] = useState([]);
   const [search, setSearch] = useState(false);
 
   return (
     <>
-      <NavBar />
+    <NavBar />
       <Routes>
         <Route
           path='/'
           element={
-            <Home
-              moviesByTitle={moviesByTitle}
-              search={search}
-              setMoviesByTitle={setMoviesByTitle}
-              setSearch={setSearch}
-            />
+            <>
+              <Home
+                mediaByTitle={mediaByTitle}
+                search={search}
+                setMediaByTitle={setMediaByTitle}
+                setSearch={setSearch}
+              />
+            </>
           }
         />
         <Route
           path='/search-results'
           element={
-            <ResultPage moviesByTitle={moviesByTitle} search={search} />
+            <>
+              <IntAllRes results={mediaByTitle}/>
+            </>
           }
         />
-        <Route 
+        <Route
           path='/all-books'
           element={
-            <AllBooks />
+            <>
+              <AllBooks />
+            </>
           }
         />
         <Route
           path='/all-movies'
           element={
-            <AllMovies />
+            <>
+              <AllMovies />
+            </>
           }
         />
         <Route
           path='/all-shows'
           element={
-            <AllShows />
+            <>
+              <AllShows />
+            </>
           }
+        />
+        <Route
+          path='/result-page'
+          element={<ResultPage />}
+        />
+        <Route
+          path='/result-book-page'
+          element={<ResultBookPage />}
         />
       </Routes>
     </>
