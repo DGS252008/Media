@@ -27,7 +27,7 @@ const MainInfo = ({ book }) => {
                         Published:
                     </dt>
                     <dd>
-                        {releaseDate}
+                        {book.published}
                     </dd>
                 </dl>
             </div>
