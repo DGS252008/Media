@@ -1,39 +1,40 @@
-import {React, useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import IntRes from '../../../IntermediateResult/IntRes';
 import IntResShows from '../../../IntermediateResult/IntResShows';
-import IntResBooks from '../../../IntermediateResult/IntResBooks'
+import IntResBooks from '../../../IntermediateResult/IntResBooks';
 
 import './RecTitle.css';
 
 const RecTitle = ({ movie }) => {
     const [recs, setRecs] = useState([]);
-    console.log(movie.genres);
 
     useEffect(() => {
+        console.log("fetch");
         const fetchData = async () => {
-            const show = {"genres": movie.genres, "limit": 4};
-            const res = await axios.get("http://localhost:5010/recommendation", {
-                params: show
-            });
-            setRecs(res.data);
-            console.log(recs);
+            if (movie && movie.genres) {
+                const show = { "genres": movie.genres, "limit": 4 };
+                const res = await axios.get("http://localhost:5010/recommendation", {
+                    params: show
+                });
+                console.log(res.data); // Add this line
+                setRecs(res.data);
+            } 
         }
-
         fetchData();
     }, []);
+  // Adding movie as a dependency to the useEffect dependency array
 
     return (
         <div className="container mx-auto">
             <div id='rec' className='card bg-black mx-auto p-2'>
-                <h2 className='text-center text-white'>Recomendations</h2>
+                <h2 className='text-center text-white'>Recommendations</h2>
             </div>
             <div id='recTitleContainer' className="mx-auto">
                 <div id='recTitle' className="bg-black mx-auto">
                     <h3 className='font-weight-light text-white'>Movies</h3>
                     <IntRes results={recs} />
-
                 </div>
                 <div id='recTitle' className="bg-black mx-auto">
                     <h3 className='font-weight-light text-white'>Shows</h3>

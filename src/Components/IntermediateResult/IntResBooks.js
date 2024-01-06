@@ -3,8 +3,6 @@ import React from 'react';
 import IntResCardBook from './IntResCardBook';
 
 const IntResBooks = ({ results }) => {
-    results = results ?? {};
-
     return(
         <div className="container mx-auto text-center">
             <ul className='mx-auto row text-center'>

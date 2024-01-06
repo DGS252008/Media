@@ -72,7 +72,7 @@ function App() {
           element={<ResultPage />}
         />
         <Route
-          path='/results/:result_id'
+          path='/results/book/:result_id'
           element={<ResultBookPage />}
         />
       </Routes>

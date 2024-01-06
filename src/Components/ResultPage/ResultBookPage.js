@@ -19,7 +19,7 @@ const ResultPage = () => {
             {title && (
                 <React.Fragment key={title}>
                     <SearchedBookCard book={{ img, title, published, rating, description, author }} />
-                    <RecTitle />
+                    <RecTitle movie={book}/>
                 </React.Fragment>
             )}
         </div>
