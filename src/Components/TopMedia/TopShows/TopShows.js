@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const TopShows = () => {
+const TopShows = ({ show }) => {
   return (
     <div className="shows">
       <h2 className='font-weight-normal py-3'>Popular Shows</h2>
