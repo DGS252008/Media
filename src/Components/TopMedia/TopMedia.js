@@ -13,13 +13,11 @@ const TopMedia = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-                const topMedia = { "limit": 4 };
-                const res = await axios.get("http://localhost:5010/get_popular", {
-                    params: topMedia
-                });
-                console.log(res.data); // Add this line
+                const res = await axios.get("http://localhost:5010/get_popular");
+                console.log(res); // Add this line
                 setTopMedia(res.data);
         }
+        fetchData();
     })
 
     return (

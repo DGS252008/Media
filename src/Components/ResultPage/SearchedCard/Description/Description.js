@@ -12,7 +12,7 @@ const Description = ({ media }) => {
     };
 
     const getDescriptionPreview = () => {
-        const previewWords = words.slice(0, 51).join(' ');
+        const previewWords = words.slice(0, 50).join(' ');
 
         return showFullDescription ? formattedDescription : previewWords;
     };
