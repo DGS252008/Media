@@ -3,18 +3,19 @@ import React, { useState } from 'react';
 const Description = ({ media }) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
 
-    const formattedDescription = media.description.replace(/([.!?])/g, '$1 ');
-
-    const words = formattedDescription.split(/[\s.!?]+/);
-
     const toggleDescription = () => {
         setShowFullDescription(!showFullDescription);
     };
 
     const getDescriptionPreview = () => {
+        if (showFullDescription) {
+            return media.description;
+        }
+
+        const words = media.description.split(' ');
         const previewWords = words.slice(0, 50).join(' ');
 
-        return showFullDescription ? formattedDescription : previewWords;
+        return words.length > 50 ? previewWords : previewWords;
     };
 
     return (
@@ -26,7 +27,7 @@ const Description = ({ media }) => {
                     </dt>
                     <dd>
                         {getDescriptionPreview()}
-                        {words.length > 30 && (
+                        {media.description.split(' ').length > 50 && (
                             <div>
                                 <button className="btn text-white p-0" onClick={toggleDescription}>
                                     {showFullDescription ? 'Read Less' : 'Read More...'}
