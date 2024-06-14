@@ -8,23 +8,28 @@ import IntResBooks from '../../../IntermediateResult/IntResBooks';
 import './RecTitle.css';
 
 const RecTitle = ({ movie }) => {
-    const [recs, setRecs] = useState([]);
+    const [recs, setRecs] = useState({ movie: [] });
 
     useEffect(() => {
         console.log("fetch");
         const fetchData = async () => {
             if (movie && movie.genres) {
-                const show = { "genres": movie.genres, "limit": 4 };
-                const res = await axios.get("http://localhost:5010/recommendation", {
-                    params: show
-                });
-                console.log(res.data); // Add this line
-                setRecs(res.data);
-            } 
+                const show = { genres: movie.genres, limit: 4 };
+                try {
+                    const res = await axios.get("http://localhost:5010/recommendation", {
+                        params: show
+                    });
+                    console.log("API response:", res.data); // Log the API response
+                    console.log("Type of res.data:", typeof res.data); // Log the type of res.data
+                    console.log("Is Array:", Array.isArray(res.data)); // Check if res.data is an array
+                    setRecs({ movie: res.data });
+                } catch (error) {
+                    console.error("Error fetching recommendations:", error);
+                }
+            }
         }
         fetchData();
-    }, []);
-  // Adding movie as a dependency to the useEffect dependency array
+    }, [movie]);
 
     return (
         <div className="container mx-auto">
