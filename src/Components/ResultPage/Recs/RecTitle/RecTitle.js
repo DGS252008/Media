@@ -14,7 +14,7 @@ const RecTitle = ({ movie }) => {
         console.log("fetch");
         const fetchData = async () => {
             if (movie && movie.genres) {
-                const show = { genres: movie.genres, limit: 4 };
+                const show = { genres: movie.genres };
                 try {
                     const res = await axios.get("http://localhost:5010/recommendation", {
                         params: show
@@ -22,7 +22,7 @@ const RecTitle = ({ movie }) => {
                     console.log("API response:", res.data); // Log the API response
                     console.log("Type of res.data:", typeof res.data); // Log the type of res.data
                     console.log("Is Array:", Array.isArray(res.data)); // Check if res.data is an array
-                    setRecs({ movie: res.data });
+                    setRecs(res.data);
                 } catch (error) {
                     console.error("Error fetching recommendations:", error);
                 }

@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react';
+import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import './TopMedia.css';
@@ -13,23 +13,26 @@ const TopMedia = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-                const res = await axios.get("http://localhost:5010/get_popular");
-                console.log(res); // Add this line
-                setTopMedia(res.data);
+            const res = await axios.get("http://localhost:5010/get_popular");
+            console.log(res); // Add this line
+            setTopMedia(res.data);
+            console.log(res.data);
         }
         fetchData();
     })
+
+    console.log(topMedia);
 
     return (
         <div id='TopMedia' className='p-1'>
             <div className="row">
                 <div className="col">
-                    <TopMovies movie = { topMedia } />
+                    <TopMovies movie={topMedia} />
                 </div>
             </div>
             <div className="row">
                 <div className="col">
-                    <TopShows show={ topMedia } />
+                    <TopShows show={topMedia} />
                 </div>
             </div>
             <div className="row">

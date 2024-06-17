@@ -15,7 +15,7 @@ const MainInfo = ({ movie }) => {
 
     return (
         <div id='mediaInfo' className="mx-auto row">
-            <div className="col-md-4">
+            <div className="col-md-auto">
                 <dl className='row mx-auto'>
                     <dt id='info' className='list-inline-item'>
                         Title:
@@ -32,7 +32,7 @@ const MainInfo = ({ movie }) => {
                 </dl>
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-auto">
                 <dl className='row mx-auto'>
                     <dt id='info' className='list-inline-item'>
                         Rating:

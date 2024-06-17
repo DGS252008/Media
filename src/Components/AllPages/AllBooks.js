@@ -5,7 +5,7 @@ import IntResCardBook from '../IntermediateResult/IntResCardBook';
 const AllBooks = () => {
     const [bookTitle, setBookTitle] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [booksPerPage] = useState(10); // Change this value as needed
+    const [booksPerPage] = useState(36); // Change this value as needed
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,8 +47,8 @@ const AllBooks = () => {
                 })}
             </ul>
             <div>
-                {currentPage > 1 && <button onClick={prevPage}>Previous Page</button>}
-                {bookTitle.length === booksPerPage && <button onClick={nextPage}>Next Page</button>}
+                {currentPage > 1 && <button onClick={prevPage} className='btn m-1 text-white'>Previous Page</button>}
+                {bookTitle.length === booksPerPage && <button onClick={nextPage} className='btn m-1 text-white'>Next Page</button>}
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import IntResCard from './IntResCard';
 
 const IntRes = ({ results }) => {
   const movieResults = Array.isArray(results?.movie) ? results.movie : [];
-
+  console.log(results);
   return (
     <div className="container mx-auto text-center">
       <ul className="mx-auto row text-center">

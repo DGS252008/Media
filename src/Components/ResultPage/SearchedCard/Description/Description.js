@@ -20,7 +20,7 @@ const Description = ({ media }) => {
 
     return (
         <div id='descriptionContainer' className="row">
-            <div className='col-md-8'>
+            <div className='col-md-auto'>
                 <dl className='container'>
                     <dt id='info' className='list-inline-item'>
                         Description:

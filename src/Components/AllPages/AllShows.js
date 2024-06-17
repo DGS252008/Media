@@ -5,7 +5,7 @@ import IntResCard from '../IntermediateResult/IntResCard';
 const AllShows = () => {
     const [showTitle, setShowTitle] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [showsPerPage] = useState(48); // Change this value as needed
+    const [showsPerPage] = useState(36); // Change this value as needed
 
     useEffect(() => {
         const fetchData = async () => {
