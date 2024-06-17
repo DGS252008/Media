@@ -3,7 +3,8 @@ import React from 'react';
 import IntResBooks from '../../IntermediateResult/IntResBooks';
 
 const TopBooks = ({ book }) => {
-  console.log(book);
+  // console.log(book);
+  
 
   return (
     <div className='books'>

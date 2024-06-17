@@ -4,7 +4,7 @@ import IntResCardBook from './IntResCardBook';
 
 const IntResBooks = ({ results }) => {
     //console.log(results);
-
+    results = results ?? {};
 
     return(
         <div className="container mx-auto text-center">
