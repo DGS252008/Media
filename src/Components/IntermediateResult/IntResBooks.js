@@ -3,7 +3,6 @@ import React from 'react';
 import IntResCardBook from './IntResCardBook';
 
 const IntResBooks = ({ results }) => {
-    //console.log(results);
     results = results ?? {};
 
     return(

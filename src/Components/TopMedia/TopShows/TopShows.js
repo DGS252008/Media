@@ -1,5 +1,5 @@
 import React from 'react';
-import IntResShows from '../../IntermediateResult/IntResShows';
+import CarouselShows from './CarouselShows';
 
 
 const TopShows = ({ show }) => {
@@ -9,7 +9,7 @@ const TopShows = ({ show }) => {
     <div className="shows">
       <h2 className='font-weight-normal py-3'>Popular Shows</h2>
       <div className='mediaPlaceHolder'>
-        <IntResShows results={show} />
+        <CarouselShows results={show} />
       </div>
     </div>
   )

@@ -1,9 +1,8 @@
-import { React, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import './TopMedia.css';
 
-import poster from '../ResultPage/Recs/theMenu.jpg'
 import TopMovies from './TopMovies/TopMovies';
 import TopShows from './TopShows/TopShows';
 import TopBooks from './TopBooks/TopBooks';
@@ -19,12 +18,12 @@ const TopMedia = () => {
             console.log(res.data);
         }
         fetchData();
-    })
+    }, []);
 
     console.log(topMedia);
 
     return (
-        <div id='TopMedia' className='p-1'>
+        <div id='TopMedia' className='p-1 carousel-slide'>
             <div className="row">
                 <div className="col">
                     <TopMovies movie={topMedia} />
@@ -35,9 +34,9 @@ const TopMedia = () => {
                     <TopShows show={topMedia} />
                 </div>
             </div>
-            <div className="row">
-                <div className="col">
-                    <TopBooks book={ topMedia } />
+            <div className="row carousel-inner">
+                <div className="col carousel-item active">
+                    <TopBooks className="d-block" book={topMedia} />
                 </div>
             </div>
         </div>
