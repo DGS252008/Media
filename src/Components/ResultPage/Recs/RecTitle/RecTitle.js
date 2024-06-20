@@ -14,7 +14,7 @@ const RecTitle = ({ movie }) => {
         console.log("fetch");
         const fetchData = async () => {
             if (movie && movie.genres) {
-                const show = { genres: movie.genres };
+                const show = { genres: movie.genres, title: movie.title, description: movie.description};
                 try {
                     const res = await axios.get("http://localhost:5010/recommendation", {
                         params: show
